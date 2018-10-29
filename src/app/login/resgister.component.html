@@ -1,0 +1,43 @@
+<div class="wrapper fadeInDown">
+    <div id="formContentRegister">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <div class="fadeIn first">
+            <img src="../../assets/img/angularfirebase.png" id="icon" alt="User Icon" />
+            <h1>Angular Firebase App</h1>
+        </div>
+        <hr>
+
+        <!-- Login Form -->
+        <form>
+            <div class="row">
+                <div class="col-md-6">
+                    <input type="text" class="fadeIn third" name="cedula" placeholder="Cédula">
+                    <input type="text" class="fadeIn second" name="nombres" placeholder="Nombres">
+                    <input type="text" class="fadeIn third" name="apellidos" placeholder="Apellidos">
+                    <input type="text" class="fadeIn third" name="direccion" placeholder="Direccion">
+                    <input type="text" class="fadeIn third" name="correo" placeholder="Correo">
+
+                </div>
+                <div class="col-md-6">
+                    <input type="text" class="fadeIn third" name="usuario" placeholder="usuario">
+                    <input type="text" class="fadeIn third" name="passowrd" placeholder="contraseña">
+                    <input type="text" class="fadeIn third" name="passowrd2" placeholder="confirmar contraseña">
+
+                </div>
+            </div>
+            <br>
+            <div class="text-center">
+                <input type="submit" class=" btn btn-primary fadeIn" value="Guardar">
+                <input type="submit" class="btn btn-danger fadeIn" value="Cancelar">
+            </div>
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" [routerLink]="['/login']">Inicio de Sesión</a>
+        </div>
+
+    </div>
+</div>

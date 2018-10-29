@@ -1,14 +1,36 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
+//Componentes
 import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { ResgisterComponent } from './login/resgister.component';
+import { NoPageFoundComponent } from './login/no-page-found.component';
+
+//Rutas
+import { APP_ROUTES } from './app.routes';
+//Modulos
+import { PaginasModule } from './paginas/paginas.module';
+import { ServiciosModule } from './servicios/servicios.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    ResgisterComponent,
+    NoPageFoundComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,//se utiliza con el formGroup --- Ver pagina de Registros
+    APP_ROUTES,
+    PaginasModule,
+    ServiciosModule
   ],
   providers: [],
   bootstrap: [AppComponent]
