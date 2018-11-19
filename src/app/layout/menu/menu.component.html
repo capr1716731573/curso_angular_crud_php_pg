@@ -1,6 +1,10 @@
 <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
     <span class="navbar-toggler-icon leftmenutrigger"></span>
-    <a class="navbar-brand" href="#">LOGO</a>
+    <a class="navbar-brand">
+        <img src="../../assets/img/angular.png" width="30" height="30" alt="" style="margin-right: 7%">
+        <img src="../../assets/img/php.png" width="40" height="20" alt="" style="margin-right: 7%">
+        <img src="../../assets/img/postgres.png" width="30" height="30" alt="" style="margin-right: 7%">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -10,18 +14,18 @@
                 <a class="nav-link" href="#" title="Dashboard"><i class="fas fa-cube"></i> Dashboard <i class="fas fa-cube shortmenu animate"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" title="Cart"><i class="fas fa-cart-plus"></i> Cart <i class="fas fa-cart-plus shortmenu animate"></i></a>
+                <a class="nav-link" href="#" title="Cart"><i class="fas fa-cart-plus"></i> Usuarios <i class="fas fa-cart-plus shortmenu animate"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" title="Comment"><i class="fas fa-comment"></i> Comment <i class="fas fa-comment shortmenu animate"></i></a>
+                <a class="nav-link" href="#" title="Comment"><i class="fas fa-comment"></i> Hospitales <i class="fas fa-comment shortmenu animate"></i></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-md-auto d-md-flex">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Profile</a>
+                <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfíl</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-key"></i> Logout</a>
+                <a class="nav-link pointer" (click)="logout()"><i class="fas fa-key"></i> Logout</a>
             </li>
         </ul>
     </div>

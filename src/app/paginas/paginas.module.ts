@@ -5,6 +5,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { LayoutModule } from "../layout/layout.module";
 import { PAGES_ROUTES } from "./paginas.routes";
 import { PaginasComponent } from './paginas.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { HospitalComponent } from './hospital/hospital.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { PaginasComponent } from './paginas.component';
   ],
   declarations: [
     PaginasComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsuariosComponent,
+    HospitalComponent
   ]
 })
 export class PaginasModule { }

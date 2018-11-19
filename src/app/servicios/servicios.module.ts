@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginService } from './login.service';
 import { RegisterService } from './register.service';
 import { HospitalService } from './hospital.service';
+import { ProvinciaService } from './provincia.service';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { HospitalService } from './hospital.service';
   providers:[
     LoginService,
     RegisterService,
-    HospitalService
+    HospitalService,
+    ProvinciaService
   ],
   declarations:[]
 })

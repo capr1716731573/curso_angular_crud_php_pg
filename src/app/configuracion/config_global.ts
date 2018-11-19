@@ -1,2 +1,6 @@
-//Link principal de la base de datos en FIREBASE
-export const FIREBASE_BDD='https://appcurso1angularcrud.firebaseio.com';
+//LINK DE CONFIGURACIONES A API REST O WEB SERVICE
+const PROTOCOL='http://'
+const SERVER='localhost';
+const PORT=':80'
+const LINK='/api_hospitales_php/public/hospitales';
+export const API_REST=`${PROTOCOL}${SERVER}${PORT}${LINK}`;

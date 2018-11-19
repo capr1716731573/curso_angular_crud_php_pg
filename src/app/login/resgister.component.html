@@ -4,33 +4,41 @@
 
         <!-- Icon -->
         <div class="fadeIn first">
-            <img src="../../assets/img/angularfirebase.png" id="icon" alt="User Icon" />
-            <h1>Angular Firebase App</h1>
+            <img src="../../assets/img/logoapp.png" class="img-register" alt="User Icon" />
+            <h1>Angular App</h1>
         </div>
         <hr>
 
         <!-- Login Form -->
-        <form>
+        <form #formularioUsuario="ngForm" ngNativeValidate (ngSubmit)="guardarUsuario(formularioUsuario)">
             <div class="row">
                 <div class="col-md-6">
-                    <input type="text" class="fadeIn third" name="cedula" placeholder="Cédula">
-                    <input type="text" class="fadeIn second" name="nombres" placeholder="Nombres">
-                    <input type="text" class="fadeIn third" name="apellidos" placeholder="Apellidos">
-                    <input type="text" class="fadeIn third" name="direccion" placeholder="Direccion">
-                    <input type="text" class="fadeIn third" name="correo" placeholder="Correo">
+                    <input type="text" [(ngModel)]="usuario.cedula_user" class="fadeIn third" name="cedula_user" placeholder="Cédula" required DirectivaNumeros>
+                    <input type="text" [(ngModel)]="usuario.nombres_user" class="fadeIn second" name="nombres_user" placeholder="Nombres" required DirectivaMayusculas>
+                    <input type="text" [(ngModel)]="usuario.apellidos_user" class="fadeIn third" name="apellidos_user" placeholder="Apellidos" required DirectivaMayusculas>
+                    <input type="date" [(ngModel)]="usuario.fecnac_user" class="fadeIn third" name="fecnac_user" placeholder="Fecha Nacimiento">
+                    <select class="fadeIn third" style="margin-left: 35px; width: 85%" [(ngModel)]="usuario.fk_provincia" name="fk_provincia" class="form-control" required>
+                        <option value="0">Seleccione Hospital</option>
+                        <option *ngFor="let p of provincias" [value]="p.pk_provincia">
+                          {{ p.nombre_provincia }}
+                        </option>
+                      </select>
 
                 </div>
                 <div class="col-md-6">
-                    <input type="text" class="fadeIn third" name="usuario" placeholder="usuario">
-                    <input type="text" class="fadeIn third" name="passowrd" placeholder="contraseña">
-                    <input type="text" class="fadeIn third" name="passowrd2" placeholder="confirmar contraseña">
-
+                    <input type="text" [(ngModel)]="usuario.ciudad_user" class="fadeIn third" name="ciudad_user" placeholder="Ciudad" required DirectivaMayusculas>
+                    <input type="text" [(ngModel)]="usuario.usuario_user" class="fadeIn third" name="usuario_user" placeholder="Usuario" required>
+                    <input type="password" [(ngModel)]="usuario.contrasena_user" class="fadeIn third" name="contrasena_user" placeholder="Contraseña" required>
+                    <input type="password" [(ngModel)]="pass2" class="fadeIn third" name="pass2" placeholder="Confirmar contraseña" required>
+                    <p class="text-danger" *ngIf="!formularioUsuario.pristine && (usuario.contrasena_user != pass2)">
+                        Las Contraseñas deben ser iguales..
+                    </p>
                 </div>
             </div>
             <br>
             <div class="text-center">
-                <input type="submit" class=" btn btn-primary fadeIn" value="Guardar">
-                <input type="submit" class="btn btn-danger fadeIn" value="Cancelar">
+                <input type="submit" class="btn btn-primary fadeIn" [disabled]="formularioUsuario.invalid && (usuario.contrasena_user != pass2)" value="Guardar">
+                <input type="button" class="btn btn-danger fadeIn" value="Cancelar" (click)="cancelarUsuario()">
             </div>
         </form>
 
@@ -38,6 +46,7 @@
         <div id="formFooter">
             <a class="underlineHover" [routerLink]="['/login']">Inicio de Sesión</a>
         </div>
+
 
     </div>
 </div>
