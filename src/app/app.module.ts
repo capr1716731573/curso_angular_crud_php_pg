@@ -19,7 +19,8 @@ import { APP_ROUTES } from './app.routes';
 //Modulos
 import { PaginasModule } from './paginas/paginas.module';
 import { ServiciosModule } from './servicios/servicios.module';
-
+import { PruebaTableComponent } from './login/prueba-table.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ServiciosModule } from './servicios/servicios.module';
     AppComponent,
     LoginComponent,
     ResgisterComponent,
-    NoPageFoundComponent
+    NoPageFoundComponent,
+    PruebaTableComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +41,8 @@ import { ServiciosModule } from './servicios/servicios.module';
     NgSelectModule,
     PaginasModule,
     ServiciosModule
+   ,HttpClientModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

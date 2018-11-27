@@ -8,18 +8,31 @@ import { PaginasComponent } from './paginas.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalComponent } from './hospital/hospital.component';
 
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { UsuarioComponent } from './usuarios/usuario.component';
+import { HospitalesComponent } from './hospital/hospitales.component';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     LayoutModule,
     PAGES_ROUTES
+    , NgxPaginationModule,
+    Ng2SearchPipeModule,
+    Ng2OrderModule
+
   ],
   declarations: [
     PaginasComponent,
     DashboardComponent,
     UsuariosComponent,
-    HospitalComponent
+    HospitalComponent,
+    UsuarioComponent,
+    HospitalesComponent
+    
   ]
 })
 export class PaginasModule { }

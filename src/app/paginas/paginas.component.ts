@@ -10,10 +10,12 @@ declare function init_plugins_menu();
 })
 export class PaginasComponent implements OnInit {
 
+
   constructor() { }
 
   ngOnInit() {
     init_plugins_menu();
+   
   }
 
 }

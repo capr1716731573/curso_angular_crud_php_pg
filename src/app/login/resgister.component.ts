@@ -8,7 +8,7 @@ import { ProvinciaService } from '../servicios/provincia.service';
 @Component({
   selector: 'app-resgister',
   templateUrl: './resgister.component.html',
-  styles: []
+  styleUrls: ['../../assets/css/login_register.css']
 })
 export class ResgisterComponent implements OnInit {
   usuario:Usuario=new Usuario(0,'','','','',0,'','','');
