@@ -1,3 +1,51 @@
-<p>
-  hospital works!
-</p>
+<h2>Registro Hospital</h2>
+<div class="row animated fadeIn">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <!-- Login Form -->
+                <form #formularioHospital="ngForm" ngNativeValidate (ngSubmit)="guardarHospital(formularioHospital)">
+                    <div class="row">
+                        <div class="col-md-6">
+
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input type="text" [(ngModel)]="hospital.nombre_hospital" class="form-control" name="nombres_user" placeholder="Nombres" required DirectivaMayusculas>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Provincia</label>
+                                <select class="form-control" [(ngModel)]="hospital.pk_provincia" name="pk_provincia" class="form-control" required DirectivaMayusculas>
+                                  <option value="0">Seleccione Provincias</option>
+                                  <option *ngFor="let p of listaProvincias" [value]="p.pk_provincia">
+                                    {{ p.nombre_provincia }}
+                                  </option>
+                                </select>
+
+                            </div>
+
+                            <div class="form-group">
+                                <label>Ciudad</label>
+                                <input type="text" [(ngModel)]="hospital.ciudad_hospital" class="form-control" name="ciudad_hospital" placeholder="Ciudad" required DirectivaMayusculas>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-body" *ngIf="id != 'nuevo'">
+                                <label>Foto</label>
+                                <img [src]="hospital && hospital.foto_hospital | imagen:'hospital'" (click)="cambiarFoto()" alt="" class="rounded img-fluid pointer">
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class=" col-md-6 form-group ">
+                            <input type="submit" class="btn btn-primary " [disabled]="formularioHospital.invalid" value="Guardar">
+                            <input type="button" class="btn btn-danger " value="Cancelar" (click)="cancelarHospital()">
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

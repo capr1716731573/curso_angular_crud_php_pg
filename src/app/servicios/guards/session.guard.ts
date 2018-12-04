@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { CanActivate,Router ,ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
 import { LoginService } from '../login.service';
 
 @Injectable({
@@ -15,10 +14,10 @@ export class SessionGuard implements CanActivate {
 
   canActivate(){
     if(this._loginService.comprobarLogin()){
-      console.log('PASO EL GUARD');
+      
       return true;
     }else{
-      console.log('NO PASO EL GUARD');
+      
       this.router.navigate(['/login']);
       return false;
     }

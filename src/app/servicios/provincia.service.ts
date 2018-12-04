@@ -25,7 +25,6 @@ export class ProvinciaService {
         swal('Error - Service Provincias',resp.message,'error');
       }else{
         dato=resp.data;
-        console.log(JSON.stringify(dato));
       }
       return dato;
     }))

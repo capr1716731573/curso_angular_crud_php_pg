@@ -5,6 +5,8 @@ import { LoginService } from './login.service';
 import { RegisterService } from './register.service';
 import { HospitalService } from './hospital.service';
 import { ProvinciaService } from './provincia.service';
+import { SubirArchivoService } from './subir-archivo.service';
+import { ModalUploadService } from '../componentes/modal-upload/modal-upload.service';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { ProvinciaService } from './provincia.service';
     LoginService,
     RegisterService,
     HospitalService,
-    ProvinciaService
+    ProvinciaService,
+    SubirArchivoService,
+    ModalUploadService
   ],
   declarations:[]
 })

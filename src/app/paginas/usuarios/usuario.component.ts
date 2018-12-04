@@ -14,6 +14,7 @@ export class UsuarioComponent implements OnInit {
   usuario:Usuario=new Usuario(0,'','','','',0,'','','');
   provincias:any[]=[];
   id:any;
+  pass2:string;
 
   constructor( public _usuarioService:RegisterService,
                public _provinciasService:ProvinciaService,
@@ -53,7 +54,7 @@ export class UsuarioComponent implements OnInit {
     this.router.navigate(['/usuarios']);
     console.log("cancelarUsuario()");
   }
-a
+
   guardarUsuario(formularioUsuario:NgForm){
     if(formularioUsuario.invalid){ return; }
     

@@ -4,10 +4,6 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-//Directives
-import { MayusculasDirective } from './directivas/mayusculas/mayusculas.directive';
-import { NumerosDirective } from './directivas/numeros/numeros.directive';
-
 //Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -24,8 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    MayusculasDirective,
-    NumerosDirective,
+    
     AppComponent,
     LoginComponent,
     ResgisterComponent,
@@ -44,6 +39,7 @@ import { HttpClientModule } from '@angular/common/http';
    ,HttpClientModule
   
   ],
+ 
   providers: [],
   bootstrap: [AppComponent]
 })

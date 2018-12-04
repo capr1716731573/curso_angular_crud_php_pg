@@ -1,9 +1,9 @@
 <nav class="navbar header-top fixed-top navbar-expand-lg navbar-dark bg-dark">
     <span class="navbar-toggler-icon leftmenutrigger"></span>
     <a class="navbar-brand">
-        <img src="../../assets/img/angular.png" width="30" height="30" alt="" style="margin-right: 7%">
-        <img src="../../assets/img/php.png" width="60" height="30" alt="" style="margin-right: 5%">
-        <img src="../../assets/img/postgres.png" width="30" height="30" alt="" style="margin-right: 7%">
+        <img src="assets/img/angular.png" width="30" height="30" alt="" style="margin-right: 7%">
+        <img src="assets/img/php.png" width="60" height="30" alt="" style="margin-right: 5%">
+        <img src="assets/img/postgres.png" width="30" height="30" alt="" style="margin-right: 7%">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -11,18 +11,18 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav animate side-nav">
             <li class="nav-item">
-                <a class="nav-link" href="#" title="Dashboard"><i class="fas fa-cube"></i> Dashboard <i class="fas fa-cube shortmenu animate"></i></a>
+                <a class="nav-link" [routerLink]="['/dashboard']" routerLinkActive title="Dashboard"><i class="fas fa-compass"></i> Dashboard <i class="fas fa-compass shortmenu animate"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" [routerLink]="['/usuarios']" routerLinkActive title="Cart"><i class="fas fa-cart-plus"></i> Usuarios <i class="fas fa-cart-plus shortmenu animate"></i></a>
+                <a class="nav-link" [routerLink]="['/usuarios']" routerLinkActive title="Usuarios"><i class="fas fa-users"></i> Usuarios <i class="fas fa-users shortmenu animate"></i></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#" title="Comment"><i class="fas fa-comment"></i> Hospitales <i class="fas fa-comment shortmenu animate"></i></a>
+                <a class="nav-link" [routerLink]="['/hospitales']" routerLinkActive title="Hospitales"><i class="fas fa-hospital"></i> Hospitales <i class="fas fa-hospital shortmenu animate"></i></a>
             </li>
         </ul>
         <ul class="navbar-nav ml-md-auto d-md-flex">
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-user"></i> Perfíl</a>
+                <a class="nav-link" [routerLink]="['/usuario',usuario.pk_user]" routerLinkActive title="Usuarios"><i class="fas fa-user"></i> Perfíl</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link pointer" (click)="logout()"><i class="fas fa-key"></i> Logout</a>

@@ -1,3 +1,73 @@
-<p>
-  hospitales works!
-</p>
+<div class="container">
+    <h2 style="color: black">Gestión de Hospitales</h2>
+    <div class="row animated fadeIn">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <input type="text" class="form-control" placeholder="Buscar...." name="search" [(ngModel)]="filter" DirectivaMayusculas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row animated fadeIn">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="text-right">
+                        <button [routerLink]="['/hospital','nuevo']" type="button" class="btn waves-effect waves-light btn-rounded btn-primary">
+                            <i class="fa fa-plus"></i> Nuevo
+                        </button>
+                    </div>
+                    <br>
+                    <div class="table-responsive pointer">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Nombres</th>
+                                    <th>Provincia</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let hospital of listaHospitales | filter:filter | paginate: { itemsPerPage: 5, currentPage: p }; let i = index">
+
+                                    <td class="w70 pointer">
+                                        <img (click)='mostrarModal(hospital.pk_hospital)' [src]="hospital.foto_hospital  | imagen:'hospital'" class="img-50 img-circle">
+                                    </td>
+                                    <td>{{hospital.nombre_hospital}}</td>
+                                    <td>{{hospital.nombre_provincia}}</td>
+
+                                    <td>
+                                        <!-- Boton de Opciones -->
+
+                                        <!-- Example single danger -->
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-code"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item pointer" [routerLink]="['/hospital',hospital.pk_hospital]">Editar</a>
+                                                <a class="dropdown-item pointer" (click)="eliminarHospital(hospital)">Eliminar</a>
+                                            </div>
+                                        </div>
+
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot></tfoot>
+                        </table>
+
+                        <br>
+
+
+                        <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
